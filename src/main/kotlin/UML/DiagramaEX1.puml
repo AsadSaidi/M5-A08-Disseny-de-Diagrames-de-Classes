@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class CartaPokemon{
+    -- Atributs --
+        - nom: String
+        - tipus: String
+        - puntsAtac: Int
+        - puntsDefensa: Int
+    }
+
+@enduml

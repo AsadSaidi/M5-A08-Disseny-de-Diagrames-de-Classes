@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Cita{
+    -- Atributs --
+        - hora : Int
+        - minut : Int
+        - títol : Int
+        - descripcio : String
+
+    -- Mètodes --
+        + constructor (Int, Int, String, String)
+        + getTitol(): String
+        + getDescripcio(): String
+        + setTitol(String)
+        + setDescripcio(String)
+}
+
+class Pàgina{
+    -- Atributs --
+        - dia: Int
+        - mes: Int
+        - any: Int
+        - esFestiu: Boolean
+        - cites: MutableList<Cita>
+
+    -- Mètodes --
+        + constructor(Int, Int, Int, Boolean, MutableList<Cita>)
+        + afegirCita(Cita)
+        + buscarCita(String): MutableList<Cita>
+}
+
+class Agenda{
+    -- Atributs --
+        - institut: String
+        - propietari: String
+        - mail : String
+        - pagines: MutableList<Pagina>
+
+    -- Mètodes --
+        + constructor(String, String, String)
+        + afegirCita(Pagina, Cita)
+}
+
+@enduml
