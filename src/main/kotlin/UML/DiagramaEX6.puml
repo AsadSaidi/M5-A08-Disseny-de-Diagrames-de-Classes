@@ -1,0 +1,49 @@
+@startuml
+
+ class Amic {
+    -- Atributs --
+         - nom: String
+         - presupost: Int
+         - begudaPreferida: String
+         - listaBegudes: MutableList<Begudes>
+
+     + constructor(String, Int, String, MutableList<Begudes>)
+     + pagarEntrada(Int)
+     + demanarBeguda(String)
+     + afegirBeguda(Beguda)
+ }
+
+ class Beguda {
+    -- Atributs --
+        - nom: String
+        - percentageAlcohol: Float
+        - preu: Float
+
+    -- Mètodes --
+        + constructor(String, Float, Int)
+ }
+
+ class Discoteca {
+    -- Atributs --
+        - nom: String
+        - preuEntrada: String
+        - llistaBegudes: MutableList<Beguda>
+        - amicsEntrats: MutableList<Amic>
+        - aforo: Int
+
+    -- Mètodes --
+
+     + constructor(String, Float , Int)
+     + constructor(String, Float, MutableList<Beguda>, MutableList<Amic>, Int)
+     + getBegudes(): MutableList<Beguda>
+     + registrarAmic(Amic)
+     + getAforo()
+     + setAforo(Int)
+     + comprovarAforo(): Boolean
+ }
+
+ Amic "1" o-- "N" Beguda: Beu
+ Discoteca "N" o-up- "M" Amic : Assisteix
+ Discoteca "N" o-left- "M" Beguda: Serveix
+
+ @enduml

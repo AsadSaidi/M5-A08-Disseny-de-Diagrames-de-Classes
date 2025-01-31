@@ -22,7 +22,7 @@ class Jugador{
         - assistencies : Int
 
     -- Mètodes --
-        + constructor(String)
+        + constructor(String, Posicio )
         + marcarGol()
         + ferAsistencia()
 }
@@ -30,16 +30,21 @@ class Jugador{
 class Equip{
     -- Atributs --
         - nomEquip : String
-        - nomEntrenador : String
+        - entrenador : Entrenador
         - jugadors : List<Jugador>
         - punts : Int
 
     -- Mètodes --
-        + getNomJugador()
-        + afegirJugador(getNomJugador())
-        + sumarPunts
-
+        + constructor(String, String)
+        + afegirJugador(Jugador)
+        + sumarPunts(Int)
 }
 
+class Entrenador{
+    nom : String
+}
+
+Jugador *-down- Posicio
+Equip *-right- Jugador
 
 @enduml
