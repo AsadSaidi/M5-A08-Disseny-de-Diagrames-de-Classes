@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum Posicio{
+    porterer
+    defensor_dret
+    defensor_esquerre
+    defensor_central
+    migcampista_defensiu
+    migcampista_ofensiu
+    extrem_dret
+    extrem_esquerre
+    davanter
+    migcampista
+    centrodavanter
+}
+class Jugador{
+    -- Atributs --
+        - nom : String
+        - posicio : Posicio
+        - gols : Int
+        - assistencies : Int
+
+    -- Mètodes --
+        + constructor(String)
+        + marcarGol()
+        + ferAsistencia()
+}
+
+class Equip{
+    -- Atributs --
+        - nomEquip : String
+        - nomEntrenador : String
+        - jugadors : List<Jugador>
+        - punts : Int
+
+    -- Mètodes --
+        + getNomJugador()
+        + afegirJugador(getNomJugador())
+        + sumarPunts
+
+}
+
+
+@enduml

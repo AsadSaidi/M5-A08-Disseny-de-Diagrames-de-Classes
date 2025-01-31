@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+@startuml
+
+class Animal {
+    --mètodes--
+    +constructor(String, String, Int, String)
+    +getNom(): String
+    +getEspecie(): String
+    +getEdat(): Int
+    +getHabitat(): String
+    +setNom()
+    +setEspecie()
+    +setEdat()
+    +setHabitat()
+    +moureSe()
+    +emetreSo(): String
+    +comer()
+}
+
+class Visitant {
+    --atributs--
+    -nom: String
+    -edat: Int
+    -dataVisita: Date
+    -animalsVisitats: MutableList<Animal>
+
+    --mètodes--
+    +constructor(String, Int, String, MutableList<Animal>)
+    +getNom(): String
+    +getEdat(): Int
+    +getDataVisita(): String
+    +getAnimalsVisitats(): MutableList<Animal>
+    +setNom()
+    +setEdat()
+    +setDataVisita()
+    +setAnimalsVisitats()
+    +afegirAnimal(Animal)
+}
+
+Visitant <|-- Animal
+
+@enduml
+
+@enduml

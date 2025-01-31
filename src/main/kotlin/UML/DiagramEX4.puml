@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Ropa {
+    --Atributos--
+    - nombre: String
+    - talla: String
+    - precio: Float
+    - categoria: String
+
+    --Métodos--
+    + constructor(String, String, Float, String)
+    + hacerDescuento(Float)
+    + getCategoria(): String
+}
+
+class Cliente {
+    --Atributos--
+    - nombre: String
+    - email: String
+    - carrito: MutableList<Ropa>
+
+    --Métodos--
+    + constructor(String, String, MutableList<Ropa>)
+    + ponerPiezaAlCarro(pieza: Ropa)
+    + calcularTodoElCarro(): Float
+}
+
+Cliente *-up- Ropa
+
+@enduml
